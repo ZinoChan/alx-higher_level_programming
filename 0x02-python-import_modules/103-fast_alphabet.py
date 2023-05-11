@@ -1,2 +1,2 @@
 import string
-print(*string.ascii_uppercase, sep='', end='\n')
+print(string.ascii_uppercase)
