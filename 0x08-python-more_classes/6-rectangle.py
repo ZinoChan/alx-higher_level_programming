@@ -5,7 +5,7 @@
 class Rectangle:
     """ Rectangle class with width and height attributes """
 
-    number_of_instances = 0  # Public class attribute
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """Initializes a new Rectangle instance
