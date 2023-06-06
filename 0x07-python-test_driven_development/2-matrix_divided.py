@@ -14,7 +14,7 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: If div is zero.
 
     Returns:
-                A new matrix with the result of the division rounded to 2 decimal places.
+        A new matrix with to 2 decimal places.
     """
 
     if not isinstance(div, (int, float)):
@@ -23,7 +23,7 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    error_message_matrix = "matrix must be a matrix (list of lists) of integers/floats"
+    err_msg = "matrix must be a matrix (list of lists) of integers/floats"
     error_message_row_size = "Each row of the matrix must have the same size"
 
     if not isinstance(div, (int, float)):
@@ -33,20 +33,20 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError('division by zero')
 
     if not isinstance(matrix, list) or not matrix:
-        raise TypeError(error_message_matrix)
+        raise TypeError(err_msg)
 
     matrix_row_length = 0
 
     for row in matrix:
         if not isinstance(row, list) or not row:
-            raise TypeError(error_message_matrix)
+            raise TypeError(err_msg)
 
         if matrix_row_length != 0 and len(row) != matrix_row_length:
             raise TypeError(error_message_row_size)
 
         for element in row:
             if not isinstance(element, (int, float)):
-                raise TypeError(error_message_matrix)
+                raise TypeError(err_msg)
 
         matrix_row_length = len(row)
     return [[round(i / div, 2) for i in row] for row in matrix]
