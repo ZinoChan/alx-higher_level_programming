@@ -6,7 +6,7 @@ class Rectangle:
     """ Rectangle class with width and height attributes """
 
     def __init__(self, width=0, height=0):
-        """ Initializes a new Rectangle instance
+        """Initializes a new Rectangle instance
 
         Args:
             width (int, optional): Width of the rectangle. Defaults to 0.
@@ -22,7 +22,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """ Sets the width of the rectangle
+        """Sets the width of the rectangle
 
         Args:
             value (int): The new width of the rectangle
@@ -40,7 +40,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """ Sets the height of the rectangle
+        """Sets the height of the rectangle
 
         Args:
             value (int): The new height of the rectangle
