@@ -10,9 +10,5 @@ if __name__ == "__main__":
     else:
         print("{} arguments:".format(argv_len))
 
-    if argv_len >= 1:
-        argv_len = 0
-        for arg in sys.argv:
-            if argv_len != 0:
-                print("{}: {}".format(argv_len, arg))
-            argv_len += 1
+    for i, arg in enumerate(sys.argv[1:], start=1):
+        print("{}: {}".format(i, arg))
