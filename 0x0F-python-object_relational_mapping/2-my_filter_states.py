@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Lists all States with names starts with N"""
-
 import MySQLdb
 import sys
 
@@ -10,12 +9,19 @@ if __name__ == "__main__":
     database = sys.argv[3]
     searched = sys.argv[4]
 
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+    db = MySQLdb.connect(
+        host="localhost", port=3306, user=username,
+        passwd=password, db=database
+    )
 
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id ASC".format(searched)
-    cursor.execute(query, searched,)
+    query = """SELECT * FROM states WHERE name
+    LIKE BINARY '{}'""".format(searched)
+    cursor.execute(
+        query,
+        searched,
+    )
     rows = cursor.fetchall()
 
     for row in rows:

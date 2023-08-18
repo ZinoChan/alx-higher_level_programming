@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-"""Lists all States with names starts with N"""
-
 import MySQLdb
 import sys
 
@@ -16,13 +14,12 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    cursor.execute("""SELECT * FROM states WHERE name LIKE
-                   BINARY 'N%' ORDER BY id""")
-
+    cursor.execute(
+        """SELECT cities.id, cities.name, states.name
+        FROM cities INNER JOIN states ON states.id=cities.state_id"""
+    )
     rows = cursor.fetchall()
-
     for row in rows:
         print(row)
-
     cursor.close()
     db.close()
