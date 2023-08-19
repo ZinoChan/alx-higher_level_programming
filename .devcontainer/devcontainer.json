@@ -1,0 +1,35 @@
+{
+	"name": "alx-higher_level_programming",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-python.python",
+				"PKief.material-icon-theme",
+				"himanoa.python-autopep8",
+				"vscodevim.vim"
+			],
+			"settings": {
+				"workbench.colorTheme": "Pink Puff",
+				"workbench.iconTheme": "material-icon-theme",
+				"editor.insertSpaces": false,
+				"editor.formatOnSave": true,
+				"git.autofetch": true,
+				"files.insertFinalNewline": true,
+				"files.eol": "\n",
+				"terminal.integrated.defaultProfile.linux": "bash",
+				"extensions.ignoreRecommendations": true,
+				"python.testing.unittestArgs": [
+					"-v",
+					"-s",
+					"./tests",
+					"-p",
+					"*_test.py"
+				],
+				"python.testing.pytestEnabled": false,
+				"python.testing.nosetestsEnabled": false,
+				"python.testing.unittestEnabled": true
+			}
+		}
+	}
+}
