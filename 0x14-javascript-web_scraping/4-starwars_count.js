@@ -9,6 +9,10 @@ request.get(url, (error, response, body) => {
     console.log(error);
     return;
   }
+  if (response && response.statusCode !== 200) {
+    console.error('status code:', response.statusCode);
+    return;
+  }
   const filmsData = JSON.parse(body);
   const wedgeAntillesFilms = filmsData.results.filter(film => film.characters.includes(person)).length;
 
