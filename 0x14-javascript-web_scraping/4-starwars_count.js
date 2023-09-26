@@ -14,7 +14,9 @@ request.get(url, (error, response, body) => {
     return;
   }
   const filmsData = JSON.parse(body);
-  const wedgeAntillesFilms = filmsData.results.filter(film => film.characters.includes(person)).length;
-
+  let wedgeAntillesFilms = 0;
+  filmsData.results.forEach(film => {
+    if (film.characters.includes(person)) wedgeAntillesFilms++;
+  });
   console.log(wedgeAntillesFilms);
 });
