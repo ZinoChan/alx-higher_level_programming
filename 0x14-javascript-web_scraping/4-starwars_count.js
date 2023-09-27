@@ -2,7 +2,7 @@
 const request = require('request');
 
 const url = process.argv[2];
-const person = 'https://swapi-api.alx-tools.com/api/people/18/';
+const person = '18';
 
 request.get(url, (error, response, body) => {
   if (error) {
@@ -16,7 +16,8 @@ request.get(url, (error, response, body) => {
   const filmsData = JSON.parse(body);
   let wedgeAntillesFilms = 0;
   filmsData.results.forEach(film => {
-    if (film.characters.includes(person)) wedgeAntillesFilms++;
+    for (p of film.characters)
+      if (p.includes(person)) wedgeAntillesFilms++;
   });
   console.log(wedgeAntillesFilms);
 });
